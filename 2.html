@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Ent</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative; /* Ensure proper positioning of music button */
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .overlay img {
+            width: 300px;
+            height: auto;
+        }
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .header {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .header:hover {
+            transform: scale(1.1);
+        }
+        .sub-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 40px; /* Add some space between sections */
+        }
+        .story-img {
+            width: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+        .description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .download-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+        .music-player {
+            display: block;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin-top: 20px;
+            max-width: 600px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999; /* Ensure it stays above other elements */
+        }
+        .music-controls button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            margin: 0 10px;
+        }
+        .music-controls button:hover {
+            transform: scale(1.2);
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            cursor: pointer;
+            color: white;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            background-color: #232323;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .menu-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .menu-content a:hover {
+            background-color: #45a049;
+        }
+        .menu:hover .menu-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Full-screen overlay with Nexus Ent text -->
+    <div class="overlay" id="overlay">
+        <div style="font-size: 48px; font-weight: bold;">NEXUS <span style="font-size: 18px; font-weight: bold;">ent</span></div>
+    </div>
+
+    <!-- Content of the web page -->
+    <div class="menu">
+        <div style="font-size: 24px;">...</div>
+        <div class="menu-content">
+            <a href="3.html">About Us</a>
+        </div>
+    </div>
+
+    <div class="header">NEXUS <span style="font-size: 18px; font-weight: bold;">ent</span></div>
+    <div class="sub-header">Your destination for animations and stories</div>
+
+    <div class="container">
+        <img class="story-img" src="s1.jpg" alt="Story Image">
+        <div class="description">tfwolv The Final Showdown 2ch</div>
+        <button class="download-btn" onclick="downloadStory('tfwolv the final showdown 2)).docx')">Download Now</button>
+    </div>
+
+    <div class="container">
+        <img class="story-img" src="s2.jpg" alt="Story Image">
+        <div class="description">tfwolv The War</div>
+        <button class="download-btn" onclick="downloadStory('tfwolv THE WAR.html')">Download Now</button>
+    </div>
+    
+    <div class="container">
+      <img class="story-img" src="s3.jpg" alt="Story Image">
+      <div class="description">tfwolv The beginning</div>
+      <button class="download-btn" onclick="downloadStory('tfwolv the beginning .html')">Download Now</button>
+    </div>
+    
+    <div class="container">
+      <img class="story-img" src="s4.jpg" alt="Story Image">
+      <div class="description">The thief 1</div>
+      <button class="download-btn" onclick="downloadStory('The Thief 1.html')">Download Now</button>
+    </div>
+    
+     <div class="container">
+      <img class="story-img" src="s5.jpg" alt="Story Image">
+      <div class="description">The Strongest.</div>
+      <button class="download-btn" onclick="downloadStory('The Thief 1.html')">Coming soon</button>
+    </div>
+    
+     <div class="container">
+       <img class="story-img" src="s6.jpg" alt="Story Image">
+       <div class="description">The thief 2</div>
+       <button class="download-btn" onclick="downloadStory('The Thief 1.html')">Coming soon</button>
+     </div>
+
+    <div class="container">
+        <div class="sub-header">About Us</div>
+        <div>Nexus Ent is a platform created by Nexus Studios, dedicated to providing free animations and stories for everyone to enjoy.</div>
+    </div>
+
+    <!-- Music Section -->
+    <div class="music-player">
+        <!-- Music Controls -->
+        <div class="music-controls">
+            <button class="music-btn" onclick="toggleMusic()">Music On</button>
+        </div>
+    </div>
+
+    <script>
+        // Show the overlay for 3 seconds when the page loads
+        window.addEventListener('load', function() {
+            var overlay = document.getElementById('overlay');
+            setTimeout(function() {
+                overlay.classList.add('hidden');
+            }, 3000);
+        });
+
+        function downloadStory(fileName) {
+            // Create an anchor element
+            var downloadLink = document.createElement("a");
+            // Set the href attribute to the file path of the document to be downloaded
+            downloadLink.href = fileName;
+            // Set the download attribute to specify the file name when downloading
+            downloadLink.download = fileName;
+            // Simulate a click event to trigger the download
+            downloadLink.click();
+        }
+        function toggleMusic() {
+            var audio = document.querySelector('.music');
+            var musicToggle = document.querySelector('.music-btn');
+            if (audio.paused) {
+                audio.play();
+                musicToggle.textContent = "Music Off";
+            } else {
+                audio.pause();
+                musicToggle.textContent = "Music On";
+            }
+        }
+        
+           // Check if the user's browser supports localStorage
+        if (typeof(Storage) !== "undefined") {
+            // Store the state of the music player (playing or paused) in localStorage
+            var audio = document.querySelector('.music');
+            localStorage.setItem("musicState", audio.paused ? "paused" : "playing");
+        }
+        
+    </script>
+
+    <!-- Embed the audio player with autoplay -->
+    <audio class="music" autoplay loop volume="1.0">
+        <source src="mu1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+</html>

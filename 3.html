@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Nexus Ent</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 90%;
+            width: 600px; /* Set a fixed width for better readability */
+        }
+        .header {
+            font-size: 4vw; /* Responsive font size based on viewport width */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .sub-header {
+            font-size: 2.5vw;
+            margin-bottom: 20px;
+        }
+        .description {
+            font-size: 2vw;
+            margin-bottom: 4vh; /* Responsive margin based on viewport height */
+            line-height: 1.5;
+        }
+        .contact-info {
+            font-size: 1.5vw;
+            margin-top: 4vh;
+        }
+        .contact-info a {
+            color: #45a049;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">About Us</div>
+        <div class="sub-header">Nexus Studios</div>
+        <div class="description">
+            Welcome to Nexus Ent, the ultimate destination for high-quality animations and captivating stories. 
+            Founded by Nexus Studios, we are committed to providing you with an unparalleled entertainment experience. 
+            Dive into a world of creativity and imagination, where every animation and story is carefully crafted to captivate and inspire.
+            We believe in offering you the best without compromise, which is why Nexus Ent is completely ad-free. 
+            Enjoy seamless viewing without interruptions, and immerse yourself in the magic of storytelling.
+            Our journey is just beginning, and we're constantly working to bring you more exciting content. 
+            Expect regular updates with new animations and stories, all available for direct download in pristine quality.
+        </div>
+        <div class="contact-info">
+            If you have any questions, feedback, or encounter any issues, please don't hesitate to reach out to us on <a href="https://www.instagram.com/NEXUS_ENTERTAINMENT_24/" target="_blank">Instagram</a>.
+        </div>
+    </div>
+    
+   
+    
+    <script>
+        // Check if the user's browser supports localStorage
+        if (typeof(Storage) !== "undefined") {
+            // Retrieve the state of the music player from localStorage
+            var musicState = localStorage.getItem("musicState");
+            if (musicState === "playing") {
+                // If the music was playing, play it again
+                var audio = document.querySelector('.music');
+                audio.play();
+            }
+        }
+    </script>
+</body>
+</html>

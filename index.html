@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web Page</title>
+    <style>
+        body {
+            background-color: #232323;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            width: 80%;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #232323;
+        }
+        input[type="submit"] {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .loading-message, .error-message, .welcome-message {
+            display: none;
+            color: #4CAF50;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NEXUS <span style="font-size: 18px; font-weight: bold;">ent</span></h1>
+        <form id="loginForm" action="">
+            <h2>Enter Password:</h2>
+            <input type="password" id="password" name="password"><br>
+            <input type="submit" value="Enter">
+            <div class="loading-message" id="loadingMessage">Checking password. Please wait...</div>
+            <div class="error-message" id="errorMessage">Incorrect password. Please try again.</div>
+            <div class="welcome-message" id="welcomeMessage">Welcome, Muhammed!</div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var password = document.getElementById("password").value;
+            document.getElementById("loadingMessage").style.display = "block";
+            document.getElementById("errorMessage").style.display = "none";
+            document.getElementById("welcomeMessage").style.display = "none";
+            
+            // Simulating password check delay
+            setTimeout(function() {
+                if (password === "LR7GB37") {
+                    document.getElementById("loadingMessage").style.display = "none";
+                    document.getElementById("welcomeMessage").style.display = "block";
+                    setTimeout(function() {
+                        window.location.href = "2.html"; // Redirect to "2.html" after 5 seconds
+                    }, 3000); // 5 seconds delay
+                } else {
+                    document.getElementById("loadingMessage").style.display = "none";
+                    document.getElementById("errorMessage").style.display = "block";
+                }
+            }, 2000); // Adjust the delay time as needed
+        });
+    </script>
+</body>
+</html>
